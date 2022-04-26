@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "168637460361",
+    "project_id": "appointeeth",
+    "storage_bucket": "appointeeth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168637460361:android:dfec6c9165c8c283ae7b58",
+        "android_client_info": {
+          "package_name": "com.ehealth.application.appointeeth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168637460361-piqf4dhn53562g3cl9sl3mtld9hdt8pc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoklWwG6boOCPxwy0y3nWm0RwmU5K4pqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168637460361-piqf4dhn53562g3cl9sl3mtld9hdt8pc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
