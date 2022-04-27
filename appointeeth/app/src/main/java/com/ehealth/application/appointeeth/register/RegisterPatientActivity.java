@@ -2,8 +2,6 @@ package com.ehealth.application.appointeeth.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +9,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.ehealth.application.appointeeth.PacientHomePageActivity;
 import com.ehealth.application.appointeeth.data.models.UserObject;
-import com.ehealth.application.appointeeth.HomePageActivity;
+import com.ehealth.application.appointeeth.DoctorHomePageActivity;
 import com.ehealth.application.appointeeth.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
@@ -81,7 +80,7 @@ public class RegisterPatientActivity extends AppCompatActivity {
 
                         // redirectare HomePage + afisare mesaj success
                         Toast.makeText(getApplicationContext(), "Sign up successful!", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(RegisterPatientActivity.this, HomePageActivity.class));
+                        startActivity(new Intent(RegisterPatientActivity.this, PacientHomePageActivity.class));
                     }
                 });
             }

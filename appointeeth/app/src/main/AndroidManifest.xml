@@ -9,9 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppoinTeeth">
+        <activity
+            android:name=".PacientHomePageActivity"
+            android:label="@string/title_activity_pacient_home_page"
+            android:theme="@style/Theme.AppoinTeeth.NoActionBar"></activity>
+        <activity android:name=".new_package.NewEmptyActivity" />
         <activity android:name=".register.RegisterPatientActivity" />
         <activity android:name=".register.RegisterDoctorActivity" />
-        <activity android:name=".HomePageActivity" />
+        <activity android:name=".DoctorHomePageActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

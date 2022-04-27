@@ -27,4 +27,13 @@
         <item name="fontFamily">@font/nunito_sans</item>
     </style>
 
+    <style name="Theme.AppoinTeeth.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AppoinTeeth.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AppoinTeeth.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
