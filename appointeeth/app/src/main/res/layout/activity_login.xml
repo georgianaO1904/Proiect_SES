@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:visibility="invisible"
             android:gravity="center"
+            android:indeterminateTint="@android:color/white"
             android:layout_gravity="center"
             android:layout_marginTop="0dp" />
     </LinearLayout>
