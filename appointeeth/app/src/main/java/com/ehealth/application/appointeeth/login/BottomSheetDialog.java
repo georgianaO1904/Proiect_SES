@@ -36,7 +36,6 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
 
     private void navigateToRegisterPatient() {
         Intent intent = new Intent(getActivity(), RegisterPatientActivity.class);
-
         startActivity(intent);
     }
 }
