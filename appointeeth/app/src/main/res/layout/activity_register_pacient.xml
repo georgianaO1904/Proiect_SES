@@ -37,12 +37,12 @@
             android:hint="Email"
             android:background="@drawable/coloured_white_button"
             android:inputType="textEmailAddress"
-            android:fontFamily="@font/nunito_sans" />
+            android:fontFamily="@font/lato" />
 
         <EditText
             android:id="@+id/password_register"
             android:layout_width="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="24dp"
             android:layout_height="wrap_content"
             android:padding="18dp"
             android:layout_gravity="center_horizontal"
@@ -52,12 +52,12 @@
             android:hint="Password"
             android:background="@drawable/coloured_white_button"
             android:inputType="textPassword"
-            android:fontFamily="@font/nunito_sans" />
+            android:fontFamily="@font/lato" />
 
         <EditText
             android:id="@+id/password_register_validate"
             android:layout_width="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="24dp"
             android:layout_height="wrap_content"
             android:padding="18dp"
             android:layout_gravity="center_horizontal"
@@ -67,15 +67,14 @@
             android:hint="Repeat password"
             android:background="@drawable/coloured_white_button"
             android:inputType="textPassword"
-            android:fontFamily="@font/nunito_sans" />
+            android:fontFamily="@font/lato" />
 
         <ProgressBar
             android:id="@+id/progressbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            android:gravity="center"
-            android:layout_marginTop="0dp"
+            android:layout_gravity="center"
             android:indeterminateTint="@android:color/white"/>
 
     </LinearLayout>
@@ -90,8 +89,7 @@
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/nunito_sans"
-        android:textStyle="bold"
+        android:fontFamily="@font/lato_bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"/>

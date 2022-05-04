@@ -35,7 +35,7 @@
             android:hint="Email"
             android:background="@drawable/coloured_white_button"
             android:inputType="textEmailAddress"
-            android:fontFamily="@font/nunito_sans" />
+            android:fontFamily="@font/lato" />
 
 
         <EditText
@@ -51,7 +51,7 @@
             android:hint="Password"
             android:background="@drawable/coloured_white_button"
             android:inputType="textPassword"
-            android:fontFamily="@font/nunito_sans" />
+            android:fontFamily="@font/lato" />
 
         <ProgressBar
             android:id="@+id/progressbar"
@@ -59,10 +59,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            android:gravity="center"
             android:indeterminateTint="@android:color/white"
-            android:layout_gravity="center"
-            android:layout_marginTop="0dp" />
+            android:layout_gravity="center" />
     </LinearLayout>
 
     <LinearLayout
@@ -83,8 +81,7 @@
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:fontFamily="@font/nunito_sans"
-            android:textStyle="bold"
+            android:fontFamily="@font/lato_bold"
             android:textAllCaps="false"/>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -97,8 +94,7 @@
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:fontFamily="@font/nunito_sans"
-            android:textStyle="bold"
+            android:fontFamily="@font/lato_bold"
             android:textAllCaps="false"
             />
 

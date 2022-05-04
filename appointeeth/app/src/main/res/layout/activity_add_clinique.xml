@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_blue"
+    android:layout_gravity="center_horizontal"
+    android:paddingVertical="48dp"
+    android:paddingHorizontal="24dp"
     tools:context=".profile.editclinique.addclinique.AddCliniqueActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:text="Please Insert Clinique Data"
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/add_clinique_name"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:hint="Clinique name"
+            android:background="@drawable/coloured_white_button"
+            android:fontFamily="@font/lato" />
+
+        <EditText
+            android:id="@+id/add_clinique_location"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:hint="Clinique location"
+            android:background="@drawable/coloured_white_button"
+            android:fontFamily="@font/lato" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:indeterminateTint="@android:color/white"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_clinique_button"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/coloured_blue_button"
+        android:text="Submit"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/lato_bold"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"/>
+</RelativeLayout>

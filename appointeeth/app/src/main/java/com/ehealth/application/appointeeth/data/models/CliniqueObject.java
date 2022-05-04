@@ -2,11 +2,12 @@ package com.ehealth.application.appointeeth.data.models;
 
 public class CliniqueObject {
 
-    private String name, location;
+    private String id, name, location;
 
     public CliniqueObject() { }
 
-    public CliniqueObject(String name, String location) {
+    public CliniqueObject(String id, String name, String location) {
+        this.id = id;
         this.name = name;
         this.location = location;
     }
@@ -25,5 +26,13 @@ public class CliniqueObject {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
