@@ -1,5 +1,6 @@
 package com.ehealth.application.appointeeth.profile.editworkhours;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.selection.ItemKeyProvider;
 import androidx.recyclerview.selection.SelectionPredicates;
@@ -10,15 +11,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.ehealth.application.appointeeth.R;
 import com.ehealth.application.appointeeth.data.models.TimeSlot;
+import com.ehealth.application.appointeeth.login.LoginActivity;
 import com.ehealth.application.appointeeth.profile.editworkhours.timeslotsadapter.TimeSlotsListAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Set;
+
 import static com.ehealth.application.appointeeth.data.Constants.TIME_SLOTS_ARRAY;
 
 public class WorkHoursActivity extends AppCompatActivity {
@@ -57,9 +64,14 @@ public class WorkHoursActivity extends AppCompatActivity {
         dbRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId).child("program");
 
         submitButton.setOnClickListener( v -> {
-            ArrayList<TimeSlot> timeSlots = adapter.getSelectedTimeSlots();
-            // todo: continue; extract only the timeSlot variable from the TimeSlot object
-            // insert the list into the db (or a hashmap? something serializable), under users/{userId}/program/{cliniqueId}
+            // get only the selected timeslots from the adapter
+            ArrayList<String> selectedTimeSlotsSet = adapter.getSelectedTimeSlots();
+            // insert the timeslots under users/{userId}/program/{cliniqueId}
+            dbRef.child(cliniqueId).setValue(selectedTimeSlotsSet).addOnCompleteListener(task -> {
+                if(task.isSuccessful())  {
+                   Toast.makeText(WorkHoursActivity.this, "Program set successfully!", Toast.LENGTH_SHORT).show();
+                }
+            });
         });
     }
 }

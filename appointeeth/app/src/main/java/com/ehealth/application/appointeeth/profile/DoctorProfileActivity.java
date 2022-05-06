@@ -5,27 +5,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.ehealth.application.appointeeth.R;
 import com.ehealth.application.appointeeth.profile.editclinique.CliniqueBottomSheetDialog;
 import com.ehealth.application.appointeeth.profile.editworkhours.SelectCliniqueActivity;
 
 public class DoctorProfileActivity extends AppCompatActivity {
 
-    ImageView cliniquesEditButton, workhoursEditButton;
+    TextView workhoursEditView, cliniquesEditView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_profile);
 
-        cliniquesEditButton = findViewById(R.id.cliniques_edit_button);
-        workhoursEditButton = findViewById(R.id.workhours_edit_button);
+        cliniquesEditView = findViewById(R.id.cliniques_edit_view);
+        workhoursEditView = findViewById(R.id.workhours_edit_view);
 
-        workhoursEditButton.setOnClickListener(view -> {
+        workhoursEditView.setOnClickListener(view -> {
            startActivity(new Intent(DoctorProfileActivity.this, SelectCliniqueActivity.class));
         });
 
-        cliniquesEditButton.setOnClickListener(view -> {
+        cliniquesEditView.setOnClickListener(view -> {
             CliniqueBottomSheetDialog bottomSheet = new CliniqueBottomSheetDialog();
             bottomSheet.show(getSupportFragmentManager(), "CliniqueBottomSheet");
         });

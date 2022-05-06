@@ -24,6 +24,8 @@ import com.ehealth.application.appointeeth.data.models.TimeSlot;
 
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class TimeSlotsListAdapter extends RecyclerView.Adapter<TimeSlotsListAdapter.TimeSlotViewHolder> {
@@ -80,11 +82,11 @@ public class TimeSlotsListAdapter extends RecyclerView.Adapter<TimeSlotsListAdap
         }
     }
 
-    public ArrayList<TimeSlot> getSelectedTimeSlots() {
-        ArrayList<TimeSlot> selected = new ArrayList<>();
+    public ArrayList<String> getSelectedTimeSlots() {
+        ArrayList<String> selected = new ArrayList<>();
         for(int i = 0; i < getItemCount(); i++) {
             if(timeSlotsList.get(i).getSelected()) {
-                selected.add(timeSlotsList.get(i));
+                selected.add(timeSlotsList.get(i).getTimeSlot());
             }
          }
         return selected;

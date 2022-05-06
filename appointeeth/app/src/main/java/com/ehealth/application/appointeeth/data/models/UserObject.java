@@ -1,6 +1,6 @@
 package com.ehealth.application.appointeeth.data.models;
 
-
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UserObject {
@@ -9,7 +9,8 @@ public class UserObject {
     private String userEmail;
     private String userType;
     private String userCuim;
-    public HashMap<String, CliniqueObject> cliniques = new HashMap<String, CliniqueObject>();
+    private HashMap<String, CliniqueObject> cliniques = new HashMap<String, CliniqueObject>();
+    private HashMap<String, ArrayList<String>> program = new HashMap<String, ArrayList<String>>();
 
     public UserObject() { }
 
@@ -64,5 +65,13 @@ public class UserObject {
 
     public void setUserCuim(String userCuim) {
         this.userCuim = userCuim;
+    }
+
+    public HashMap<String, ArrayList<String>> getProgram() {
+        return program;
+    }
+
+    public void setProgram(HashMap<String, ArrayList<String>> program) {
+        this.program = program;
     }
 }

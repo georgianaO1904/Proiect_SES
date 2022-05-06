@@ -58,9 +58,9 @@ public class AddCliniqueActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.INVISIBLE);
 
                         if(task.isSuccessful()){
-                          Toast.makeText(getApplicationContext(), "Clinique added successfully!", Toast.LENGTH_LONG).show();
+                          Toast.makeText(AddCliniqueActivity.this, "Clinique added successfully!", Toast.LENGTH_LONG).show();
                         } else {
-                            Toast.makeText(getApplicationContext(), "There was an error, please try again later!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(AddCliniqueActivity.this, "There was an error, please try again later!", Toast.LENGTH_LONG).show();
                         }
                     }
                 );

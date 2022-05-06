@@ -25,9 +25,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import static com.ehealth.application.appointeeth.data.Constants.DOCTOR_USER_TYPE;
-import static com.ehealth.application.appointeeth.data.Constants.PACIENT_USER_TYPE;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -64,17 +62,8 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.editPassword);
         loginButton = findViewById(R.id.loginButton);
         signUp = findViewById(R.id.signUpRedirect);
-        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        progressBar = findViewById(R.id.progressbar);
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-
-        mAuthStateListener = firebaseAuth -> {
-            FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-            if (mFirebaseUser != null) {
-                navigateToHomePage();
-            } else {
-                Toast.makeText(LoginActivity.this, "Please Login", Toast.LENGTH_SHORT).show();
-            }
-        };
 
         loginButton.setOnClickListener(v -> {
             String email = emailID.getText().toString();

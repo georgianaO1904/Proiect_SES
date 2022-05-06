@@ -92,12 +92,18 @@
                         android:textStyle="bold"
                         android:fontFamily="@font/lato" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_edit_icon" />
+                        android:clickable="true"
+                        android:textSize="18sp"
+                        android:textIsSelectable="true"
+                        android:text="Edit"
+                        android:fontFamily="@font/lato_bold"
+                        android:focusable="true" />
+
                 </RelativeLayout>
 
                 <TextView
@@ -139,12 +145,19 @@
                         android:textStyle="bold"
                         android:fontFamily="@font/lato" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_edit_icon" />
+                        android:clickable="true"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:textIsSelectable="true"
+                        android:fontFamily="@font/lato_bold"
+                        android:focusable="true" />
+
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -183,13 +196,18 @@
                         android:textStyle="bold"
                         android:fontFamily="@font/lato" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/workhours_edit_button"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                    <TextView
+                        android:id="@+id/workhours_edit_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_edit_icon" />
+                        android:clickable="true"
+                        android:textSize="18sp"
+                        android:text="Edit"
+                        android:fontFamily="@font/lato_bold"
+                        android:focusable="true" />
+
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -228,13 +246,20 @@
                         android:textStyle="bold"
                         android:fontFamily="@font/lato" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/cliniques_edit_button"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+
+                    <TextView
+                        android:id="@+id/cliniques_edit_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_edit_icon" />
+                        android:clickable="true"
+                        android:textSize="18sp"
+                        android:textIsSelectable="true"
+                        android:text="Edit"
+                        android:fontFamily="@font/lato_bold"
+                        android:focusable="true" />
+
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppoinTeeth.NoActionBar">
-        <activity android:name=".profile.editworkhours.SelectCliniqueActivity"></activity>
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".profile.editworkhours.SelectCliniqueActivity" />
         <activity android:name=".profile.editworkhours.WorkHoursActivity" />
         <activity android:name=".profile.editclinique.addclinique.AddCliniqueActivity" />
         <activity android:name=".profile.editclinique.removeclinique.RemoveCliniqueActivity" />
@@ -19,7 +20,7 @@
         <activity android:name=".register.RegisterPatientActivity" />
         <activity android:name=".register.RegisterDoctorActivity" />
         <activity android:name=".DoctorHomePageActivity" />
-        <activity android:name=".login.LoginActivity">
+        <activity android:name=".login.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
