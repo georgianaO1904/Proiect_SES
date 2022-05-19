@@ -26,21 +26,7 @@ import static com.ehealth.application.appointeeth.data.Constants.DOCTOR_USER_TYP
 public class SplashScreenActivity extends AppCompatActivity {
 
     FirebaseUser firebaseUser;
-    FirebaseAuth.AuthStateListener mAuthStateListener;
     ProgressBar progressBar;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        // check if current user is not null
-        if (firebaseUser != null){
-           startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
-        }
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,19 +34,16 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         progressBar = findViewById(R.id.progressbar);
 
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
         progressBar.setVisibility(View.VISIBLE);
 
-        mAuthStateListener = firebaseAuth -> {
-            FirebaseUser mFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-            if (mFirebaseUser != null) {
-                progressBar.setVisibility(View.GONE);
-               navigateToHomePage();
-            } else {
-                progressBar.setVisibility(View.GONE);
-                startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
-            }
-        };
-
+        // check if current user is not null
+        if (firebaseUser != null) {
+            navigateToHomePage();
+        } else {
+            startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+        }
     }
 
     private void navigateToHomePage() {

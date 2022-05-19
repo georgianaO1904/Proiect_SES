@@ -16,20 +16,22 @@
         android:layout_centerInParent="true"
         android:gravity="center">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <TextView
             android:layout_marginTop="32dp"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="24dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_schedule_image" />
+            android:fontFamily="@font/lato_bold"
+            android:text="Welcome to Appointeeth"
+            android:textSize="24sp"/>
 
         <ProgressBar
             android:id="@+id/progressbar"
             android:elevation="70dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
+            android:visibility="visible"
             android:indeterminateTint="@android:color/white"
             android:layout_gravity="center" />
     </LinearLayout>
