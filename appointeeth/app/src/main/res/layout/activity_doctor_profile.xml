@@ -134,19 +134,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:text="Services"
+                        android:fontFamily="@font/lato"
                         android:gravity="center_vertical"
-                        android:textSize="18sp"
+                        android:text="Services"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/lato" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
 
                     <TextView
+                        android:id="@+id/services_edit_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
