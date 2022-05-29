@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class UserObject {
 
     private String userId;
+    public String userName;
     private String userEmail;
     private String userType;
     private String userCuim;
@@ -14,15 +15,17 @@ public class UserObject {
 
     public UserObject() { }
 
-    public UserObject(String userId, String userEmail, String userType, String userCuim) {
+    public UserObject(String userId, String userName, String userEmail, String userType, String userCuim) {
         this.userId = userId;
+        this.userName = userName;
         this.userEmail = userEmail;
         this.userType = userType;
         this.userCuim = userCuim;
     }
 
-    public UserObject(String userId, String userEmail, String userType) {
+    public UserObject(String userId, String userName, String userEmail, String userType) {
         this.userId = userId;
+        this.userName = userName;
         this.userEmail = userEmail;
         this.userType = userType;
     }
@@ -41,6 +44,12 @@ public class UserObject {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getUserName() { return userName; }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getUserEmail() {

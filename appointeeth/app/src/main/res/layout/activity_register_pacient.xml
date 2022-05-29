@@ -25,9 +25,24 @@
             android:src="@drawable/ic_appointment_calendar_image" />
 
         <EditText
-            android:id="@+id/email_register"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:hint="Name"
+            android:background="@drawable/coloured_white_button"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/lato" />
+
+        <EditText
+            android:id="@+id/email_register"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="24dp"
             android:layout_height="wrap_content"
             android:padding="18dp"
             android:layout_gravity="center_horizontal"

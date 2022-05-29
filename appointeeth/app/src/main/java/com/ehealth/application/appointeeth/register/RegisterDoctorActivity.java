@@ -20,7 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import static com.ehealth.application.appointeeth.data.Constants.DOCTOR_USER_TYPE;
 
 public class RegisterDoctorActivity extends AppCompatActivity  {
-    private EditText emailID, password, passwordValidation, cuim;
+
+    private EditText name, emailID, password, passwordValidation, cuim;
     private Button submitButton;
     private FirebaseAuth mFirebaseAuth;
     private ProgressBar progressBar;
@@ -32,6 +33,7 @@ public class RegisterDoctorActivity extends AppCompatActivity  {
 
         // initializari
         mFirebaseAuth = FirebaseAuth.getInstance();
+        name = findViewById(R.id.name);
         emailID = findViewById(R.id.email_register);
         password = findViewById(R.id.password_register);
         passwordValidation = findViewById(R.id.password_register_validate);
@@ -42,12 +44,16 @@ public class RegisterDoctorActivity extends AppCompatActivity  {
         // listener pentru butonul de register
         submitButton.setOnClickListener(view -> {
 
+            final String nme = name.getText().toString();
             final String email = emailID.getText().toString();
             final String cuimIdentifier = cuim.getText().toString();
             final String psswd = password.getText().toString();
             final String psswdValidation = passwordValidation.getText().toString();
 
-            if (email.isEmpty()) {
+            if (nme.isEmpty()) {
+                name.setError("Please enter email");
+                name.requestFocus();
+            } else if (email.isEmpty()) {
                 emailID.setError("Please enter email");
                 emailID.requestFocus();
             } else if (psswd.isEmpty()) {
@@ -79,7 +85,7 @@ public class RegisterDoctorActivity extends AppCompatActivity  {
                         final String uid = mFirebaseAuth.getCurrentUser().getUid();
 
                          // userul exista in Firebase dar stocam datele suplimentare in Baza de date:
-                        UserObject newUser = new UserObject(uid, email, DOCTOR_USER_TYPE, cuimIdentifier);
+                        UserObject newUser = new UserObject(uid, nme, email, DOCTOR_USER_TYPE, cuimIdentifier);
                         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
                         dbRef.child("users").child(uid).setValue(newUser);
 
