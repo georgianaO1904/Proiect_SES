@@ -1,5 +1,6 @@
 package com.ehealth.application.appointeeth.profile.searchservices;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import com.ehealth.application.appointeeth.data.models.CliniqueObject;
 import com.ehealth.application.appointeeth.data.models.ServiceObject;
 import com.ehealth.application.appointeeth.profile.editclinique.removeclinique.CliniqueListAdapter;
 import com.ehealth.application.appointeeth.profile.editclinique.removeclinique.CliniqueViewHolder;
+import com.ehealth.application.appointeeth.profile.editworkhours.WorkHoursActivity;
+import com.ehealth.application.appointeeth.profile.searchdoctors.SearchDoctorsActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -44,7 +47,11 @@ public class PatientSearchServicesListAdapter extends RecyclerView.Adapter<Patie
         final PatientSearchServicesViewHolder viewHolder = holder;
 
         holder.buttonSelect.setOnClickListener(v -> {
+            String serviceId = service.getId();
 
+            Intent intent = new Intent(v.getContext(), SearchDoctorsActivity.class);
+            intent.putExtra("serviceId", serviceId);
+            v.getContext().startActivity(intent);
         });
     }
 

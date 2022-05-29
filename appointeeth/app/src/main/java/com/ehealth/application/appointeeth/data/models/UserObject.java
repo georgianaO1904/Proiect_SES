@@ -1,5 +1,7 @@
 package com.ehealth.application.appointeeth.data.models;
 
+import android.app.Service;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,6 +14,7 @@ public class UserObject {
     private String userCuim;
     private HashMap<String, CliniqueObject> cliniques = new HashMap<String, CliniqueObject>();
     private HashMap<String, ArrayList<String>> program = new HashMap<String, ArrayList<String>>();
+    private HashMap<String, ServiceObject> services = new HashMap<String, ServiceObject>();
 
     public UserObject() { }
 
@@ -70,6 +73,14 @@ public class UserObject {
 
     public HashMap<String, CliniqueObject> getCliniques() {
         return cliniques;
+    }
+
+    public HashMap<String, ServiceObject> getServices() {
+        return services;
+    }
+
+    public void setServices(HashMap<String, ServiceObject> services) {
+        this.services = services;
     }
 
     public void setUserCuim(String userCuim) {

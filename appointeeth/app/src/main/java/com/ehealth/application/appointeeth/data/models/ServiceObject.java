@@ -16,6 +16,7 @@ public class ServiceObject {
     public ServiceObject(String id, String name, String description) {
         this.id = id;
         this.name = name;
+        this.price = "-1";
         this.description = description;
     }
 

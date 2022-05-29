@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppoinTeeth.NoActionBar">
+        <activity
+            android:name=".AdapterSearchDoctorActivity"
+            android:exported="false" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".profile.editservices.addservice.AddServiceActivity" />
         <activity android:name=".profile.editservices.removeservice.RemoveServiceActivity" />
@@ -19,6 +22,7 @@
         <activity android:name=".profile.PatientProfileActivity" />
         <activity android:name=".profile.DoctorProfileActivity" />
         <activity android:name=".profile.searchservices.PatientSearchServicesActivity" />
+        <activity android:name=".profile.searchdoctors.SearchDoctorsActivity"/>
         <activity android:name=".PacientHomePageActivity" />
         <activity android:name=".register.RegisterPatientActivity" />
         <activity android:name=".register.RegisterDoctorActivity" />
