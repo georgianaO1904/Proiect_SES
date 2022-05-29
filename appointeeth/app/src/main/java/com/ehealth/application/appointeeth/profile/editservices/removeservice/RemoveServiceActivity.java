@@ -9,10 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ehealth.application.appointeeth.R;
-import com.ehealth.application.appointeeth.data.models.CliniqueObject;
 import com.ehealth.application.appointeeth.data.models.ServiceObject;
-import com.ehealth.application.appointeeth.profile.editclinique.removeclinique.CliniqueListAdapter;
-import com.ehealth.application.appointeeth.profile.editclinique.removeclinique.RemoveCliniqueActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
