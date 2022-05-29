@@ -4,18 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ehealth.application.appointeeth.R;
 import com.ehealth.application.appointeeth.data.models.ServiceObject;
-import com.ehealth.application.appointeeth.profile.editservices.removeservice.ServiceListAdapter;
-import com.ehealth.application.appointeeth.profile.editservices.removeservice.ServiceViewHolder;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -37,10 +31,13 @@ public class ServiceProfileListAdapter extends RecyclerView.Adapter<ServiceProfi
     @Override
     public void onBindViewHolder(@NonNull ServiceProfileListAdapter.ServiceProfileListViewHolder holder, int position) {
         holder.textViewName.setText(serviceList.get(position).getName());
+        holder.textViewPrice.setText(serviceList.get(position).getPrice());
     }
 
     @Override
     public int getItemCount() {
+        if (serviceList == null)
+            return 0;
         return serviceList.size();
     }
 

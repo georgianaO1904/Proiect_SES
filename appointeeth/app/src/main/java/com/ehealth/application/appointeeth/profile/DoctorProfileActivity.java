@@ -15,8 +15,7 @@ import com.ehealth.application.appointeeth.data.models.UserObject;
 import com.ehealth.application.appointeeth.data.models.CliniqueObject;
 import com.ehealth.application.appointeeth.data.models.ServiceObject;
 import com.ehealth.application.appointeeth.profile.editclinique.CliniqueBottomSheetDialog;
-import com.ehealth.application.appointeeth.profile.editservices.ServiceBottomSheetDialog;
-import com.ehealth.application.appointeeth.profile.editworkhours.SelectCliniqueActivity;
+import com.ehealth.application.appointeeth.profile.editservices.addservice.AddServiceActivity;
 import com.ehealth.application.appointeeth.profile.listcliniques.CliniqueProfileListAdapter;
 import com.ehealth.application.appointeeth.profile.listservices.ServiceProfileListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -105,11 +104,9 @@ public class DoctorProfileActivity extends AppCompatActivity {
 
         servicesEditView = findViewById(R.id.services_edit_view);
         cliniquesEditView = findViewById(R.id.cliniques_edit_view);
-        workhoursEditView = findViewById(R.id.workhours_edit_view);
 
         servicesEditView.setOnClickListener(view -> {
-            ServiceBottomSheetDialog bottomSheet = new ServiceBottomSheetDialog();
-            bottomSheet.show(getSupportFragmentManager(), "ServicesBottomSheet");
+            startActivity(new Intent(DoctorProfileActivity.this, AddServiceActivity.class));
         });
 
         doctorName = (TextView) findViewById(R.id.fullname);
@@ -136,9 +133,6 @@ public class DoctorProfileActivity extends AppCompatActivity {
         });
 
 
-        workhoursEditView.setOnClickListener(view -> {
-           startActivity(new Intent(DoctorProfileActivity.this, SelectCliniqueActivity.class));
-        });
 
         cliniquesEditView.setOnClickListener(view -> {
             CliniqueBottomSheetDialog bottomSheet = new CliniqueBottomSheetDialog();

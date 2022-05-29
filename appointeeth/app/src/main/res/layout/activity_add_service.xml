@@ -11,85 +11,128 @@
     tools:context=".profile.editclinique.addclinique.AddCliniqueActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="375dp"
+        android:layout_height="628dp"
         android:orientation="vertical"
-        android:layout_centerVertical="true"
         android:paddingHorizontal="24dp"
         android:paddingVertical="24dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="299dp"
+            android:layout_height="41dp"
             android:fontFamily="@font/lato_bold"
-            android:text="Insert your new service information below"
+            android:text="Choose from an existing service"
             android:textAlignment="center"
-            android:textSize="24sp"/>
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/dropdown_existing_services"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/coloured_white_button"
+            android:ems="10"
+            android:fontFamily="@font/lato"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/add_service_price_existing"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/coloured_white_button"
+            android:ems="10"
+            android:fontFamily="@font/lato"
+            android:hint="Service price"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit_service_existing"
+            android:layout_width="112dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/coloured_blue_button"
+            android:fontFamily="@font/lato_bold"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="276dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="or create a new service"
+            android:textAlignment="center"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/add_service_name"
             android:layout_width="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_height="wrap_content"
-            android:padding="18dp"
+            android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:hint="Service name"
+            android:layout_marginTop="15dp"
             android:background="@drawable/coloured_white_button"
-            android:fontFamily="@font/lato" />
+            android:ems="10"
+            android:fontFamily="@font/lato"
+            android:hint="Service name"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/add_service_price"
             android:layout_width="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_height="wrap_content"
-            android:padding="18dp"
+            android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:hint="Service price"
+            android:layout_marginTop="10dp"
             android:background="@drawable/coloured_white_button"
-            android:fontFamily="@font/lato" />
+            android:ems="10"
+            android:fontFamily="@font/lato"
+            android:hint="Service price"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/add_service_description"
             android:layout_width="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_height="wrap_content"
-            android:padding="18dp"
+            android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:hint="Service description"
+            android:layout_marginTop="10dp"
             android:background="@drawable/coloured_white_button"
-            android:fontFamily="@font/lato" />
+            android:ems="10"
+            android:fontFamily="@font/lato"
+            android:hint="Service description"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
-        <ProgressBar
-            android:id="@+id/progressbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:layout_gravity="center"
-            android:indeterminateTint="@android:color/white"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit_service_button"
+            android:layout_width="112dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/coloured_blue_button"
+            android:fontFamily="@font/lato_bold"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/submit_service_button"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/coloured_blue_button"
-        android:text="Submit"
-        android:textSize="22sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/lato_bold"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="false"/>
 </RelativeLayout>

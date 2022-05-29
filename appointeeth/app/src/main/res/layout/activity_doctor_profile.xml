@@ -10,13 +10,14 @@
     android:paddingHorizontal="24dp"
     tools:context=".profile.DoctorProfileActivity">
 
-     <androidx.appcompat.widget.AppCompatImageView
-         android:id="@+id/profile_image"
-         android:layout_width="match_parent"
-         android:layout_height="140dp"
-         android:layout_gravity="center_horizontal"
-         android:src="@drawable/ic_profile_image"
-         android:layout_marginBottom="32dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profile_image"
+        android:layout_width="260dp"
+        android:layout_height="96dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_profile_image" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -92,17 +93,17 @@
                         android:textStyle="bold"
                         android:fontFamily="@font/lato" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:clickable="true"
-                        android:textSize="18sp"
-                        android:textIsSelectable="true"
-                        android:text="Edit"
-                        android:fontFamily="@font/lato_bold"
-                        android:focusable="true" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:clickable="true"-->
+<!--                        android:focusable="true"-->
+<!--                        android:fontFamily="@font/lato_bold"-->
+<!--                        android:text="Edit"-->
+<!--                        android:textIsSelectable="true"-->
+<!--                        android:textSize="18sp" />-->
 
                 </RelativeLayout>
 
@@ -154,11 +155,11 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:clickable="true"
-                        android:text="Edit"
-                        android:textSize="18sp"
-                        android:textIsSelectable="true"
+                        android:focusable="true"
                         android:fontFamily="@font/lato_bold"
-                        android:focusable="true" />
+                        android:text="+"
+                        android:textIsSelectable="true"
+                        android:textSize="18sp" />
 
                 </RelativeLayout>
 
@@ -187,30 +188,50 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:text="Work hours"
+                        android:fontFamily="@font/lato"
                         android:gravity="center_vertical"
-                        android:textSize="18sp"
+                        android:text="Cliniques"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/lato" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
 
                     <TextView
-                        android:id="@+id/workhours_edit_view"
+                        android:id="@+id/cliniques_edit_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:clickable="true"
-                        android:textSize="18sp"
-                        android:text="Edit"
+                        android:focusable="true"
                         android:fontFamily="@font/lato_bold"
-                        android:focusable="true" />
+                        android:text="+/-"
+                        android:textIsSelectable="true"
+                        android:textSize="18sp" />
 
                 </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cliniques_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/workhours_recyclerview"
@@ -227,52 +248,6 @@
                 android:layout_height="1dp"
                 android:background="@color/white"
                 android:layout_marginVertical="18dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:text="Cliniques"
-                        android:gravity="center_vertical"
-                        android:textSize="18sp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/lato" />
-
-
-                    <TextView
-                        android:id="@+id/cliniques_edit_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:clickable="true"
-                        android:textSize="18sp"
-                        android:textIsSelectable="true"
-                        android:text="Edit"
-                        android:fontFamily="@font/lato_bold"
-                        android:focusable="true" />
-
-                </RelativeLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/cliniques_recyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/lato" />
-            </LinearLayout>
 
 
         </LinearLayout>

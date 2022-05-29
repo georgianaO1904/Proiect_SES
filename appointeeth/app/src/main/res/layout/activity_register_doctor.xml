@@ -113,16 +113,16 @@
         android:id="@+id/signupbutton"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/coloured_blue_button"
-        android:text="Submit"
-        android:textSize="22sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/lato_bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textAllCaps="false"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/coloured_blue_button"
+        android:fontFamily="@font/lato_bold"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
 
 
 </RelativeLayout>

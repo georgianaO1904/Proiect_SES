@@ -1,18 +1,18 @@
 package com.ehealth.application.appointeeth.profile.listcliniques;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.ehealth.application.appointeeth.R;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import com.ehealth.application.appointeeth.data.models.CliniqueObject;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.ehealth.application.appointeeth.profile.editworkhours.WorkHoursActivity;
+
 
 import java.util.ArrayList;
 
@@ -34,11 +34,19 @@ public class CliniqueProfileListAdapter extends RecyclerView.Adapter<CliniquePro
     @Override
     public void onBindViewHolder(@NonNull CliniqueProfileListViewHolder holder, int position) {
         holder.textViewName.setText(cliniquesList.get(position).getName());
+        holder.editScheduleView.setOnClickListener(view -> {
+            String cliniqueId = cliniquesList.get(position).getId();
+            Intent intent = new Intent(view.getContext(), WorkHoursActivity.class);
+            intent.putExtra("cliniqueId", cliniqueId);
+            view.getContext().startActivity(intent);
+        });
     }
 
 
     @Override
     public int getItemCount() {
+        if (cliniquesList == null)
+            return 0;
         return cliniquesList.size();
     }
 
