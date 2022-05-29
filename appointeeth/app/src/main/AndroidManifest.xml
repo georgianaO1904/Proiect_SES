@@ -18,6 +18,7 @@
         <activity android:name=".profile.editclinique.removeclinique.RemoveCliniqueActivity" />
         <activity android:name=".profile.PatientProfileActivity" />
         <activity android:name=".profile.DoctorProfileActivity" />
+        <activity android:name=".profile.searchservices.PatientSearchServicesActivity" />
         <activity android:name=".PacientHomePageActivity" />
         <activity android:name=".register.RegisterPatientActivity" />
         <activity android:name=".register.RegisterDoctorActivity" />
