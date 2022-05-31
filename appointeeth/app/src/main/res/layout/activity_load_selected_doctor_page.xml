@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_blue"
+    android:layout_gravity="center_horizontal"
+    android:paddingVertical="48dp"
+    android:paddingHorizontal="24dp"
+    tools:context=".profile.DoctorProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/lato"
+                android:gravity="center_vertical"
+                android:text="Fullname"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/doctor_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18dp"
+            android:text="Test Doctor"
+            android:textColor="@color/black"
+            android:fontFamily="@font/lato" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginVertical="18dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profile_image"
+        android:layout_width="300dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/ic_profile_image" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_image">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="24dp">
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="vertical">-->
+
+            <!--                    <RelativeLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:orientation="horizontal">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_alignParentStart="true"-->
+            <!--                            android:text="Email"-->
+            <!--                            android:gravity="center_vertical"-->
+            <!--                            android:textSize="18sp"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textStyle="bold"-->
+            <!--                            android:fontFamily="@font/lato" />-->
+            <!--                    </RelativeLayout>-->
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/doctor_email"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:layout_gravity="center_horizontal"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:text="test@gmail.com"-->
+            <!--                        android:textColor="@color/black"-->
+            <!--                        android:fontFamily="@font/lato" />-->
+            <!--                </LinearLayout>-->
+
+            <!--                <View-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="1dp"-->
+            <!--                    android:background="@color/white"-->
+            <!--                    android:layout_marginVertical="18dp"/>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/services_button"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/coloured_blue_button"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="services"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/cliniques_button"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/coloured_blue_button"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Cliniques"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/appointment_button"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/coloured_blue_button"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Make an Appointment"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

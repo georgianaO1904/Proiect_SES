@@ -1,0 +1,14 @@
+package com.ehealth.application.appointeeth;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class AppointmentSelectTimeSlot extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_appointment_select_time_slot);
+    }
+}

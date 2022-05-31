@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ehealth.application.appointeeth.LoadSelectedDoctorPage;
 import com.ehealth.application.appointeeth.R;
 import com.ehealth.application.appointeeth.data.models.CliniqueObject;
 import com.ehealth.application.appointeeth.data.models.ServiceObject;
@@ -52,10 +53,10 @@ public class SearchDoctorsListAdapter extends RecyclerView.Adapter<com.ehealth.a
         holder.buttonSelect.setOnClickListener(v -> {
             String doctorId = doctor.getUserId();
 
-            //cv de genul pt partea cu deschisul paginii cuinfoptdoctor
-//            Intent intent = new Intent(v.getContext(), DoctorPageActivity.class);
-//            intent.putExtra("doctorId", doctorId);
-//            v.getContext().startActivity(intent);
+           // cv de genul pt partea cu deschisul paginii cuinfoptdoctor
+            Intent intent = new Intent(v.getContext(), LoadSelectedDoctorPage.class);
+            intent.putExtra("doctorId", doctorId);
+            v.getContext().startActivity(intent);
         });
     }
 
