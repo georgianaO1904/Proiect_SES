@@ -12,25 +12,29 @@ public class UserObject {
     private String userEmail;
     private String userType;
     private String userCuim;
+    private String userPhone;
     private HashMap<String, CliniqueObject> cliniques = new HashMap<String, CliniqueObject>();
     private HashMap<String, ArrayList<String>> program = new HashMap<String, ArrayList<String>>();
     private HashMap<String, ServiceObject> services = new HashMap<String, ServiceObject>();
 
     public UserObject() { }
 
-    public UserObject(String userId, String userName, String userEmail, String userType, String userCuim) {
+    public UserObject(String userId, String userName, String userEmail, String userType, String userPhone, String userCuim) {
         this.userId = userId;
         this.userName = userName;
         this.userEmail = userEmail;
         this.userType = userType;
         this.userCuim = userCuim;
+        this.userPhone = userPhone;
     }
 
-    public UserObject(String userId, String userName, String userEmail, String userType) {
+    public UserObject(String userId, String userName, String userEmail, String userPhone, String userType) {
         this.userId = userId;
         this.userName = userName;
         this.userEmail = userEmail;
         this.userType = userType;
+        this.userPhone = userPhone;
+
     }
 
     public String getUserType() {
@@ -63,6 +67,10 @@ public class UserObject {
         this.userEmail = userEmail;
     }
 
+    public void setUserPhone(String userPhone){this.userPhone = userPhone; }
+
+    public String getUserPhone(String userPhone) {return userPhone; }
+
     public String getUserCuim() {
         return userCuim;
     }
@@ -93,5 +101,9 @@ public class UserObject {
 
     public void setProgram(HashMap<String, ArrayList<String>> program) {
         this.program = program;
+    }
+
+    public String getUserPhone() {
+        return userPhone;
     }
 }

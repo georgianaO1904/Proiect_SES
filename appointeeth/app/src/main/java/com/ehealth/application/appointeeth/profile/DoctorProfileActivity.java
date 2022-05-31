@@ -32,7 +32,7 @@ public class DoctorProfileActivity extends AppCompatActivity {
     private String uid;
     private FirebaseAuth mFirebaseAuth;
 
-    private TextView doctorName, doctorEmail;
+    private TextView doctorName, doctorEmail, doctorPhoneNumber;
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference databaseReference;
 
@@ -111,6 +111,7 @@ public class DoctorProfileActivity extends AppCompatActivity {
 
         doctorName = (TextView) findViewById(R.id.fullname);
         doctorEmail = (TextView) findViewById(R.id.email);
+        doctorPhoneNumber = (TextView)findViewById((R.id.phone));
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         uid = mFirebaseAuth.getUid();
@@ -124,6 +125,7 @@ public class DoctorProfileActivity extends AppCompatActivity {
                 UserObject user = (UserObject) snapshot.getValue(UserObject.class);
                 doctorName.setText(user.getUserName());
                 doctorEmail.setText(user.getUserEmail());
+                doctorPhoneNumber.setText(user.getUserPhone());
             }
 
             @Override
