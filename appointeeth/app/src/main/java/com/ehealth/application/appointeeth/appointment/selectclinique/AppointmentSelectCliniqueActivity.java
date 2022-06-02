@@ -1,22 +1,17 @@
-package com.ehealth.application.appointeeth;
+package com.ehealth.application.appointeeth.appointment.selectclinique;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.ehealth.application.appointeeth.R;
 import com.ehealth.application.appointeeth.data.models.CliniqueObject;
-import com.ehealth.application.appointeeth.profile.editclinique.removeclinique.CliniqueListAdapter;
-import com.ehealth.application.appointeeth.profile.editclinique.removeclinique.RemoveCliniqueActivity;
-import com.ehealth.application.appointeeth.profile.editworkhours.cliniqueselectadapter.CliniqueSelectListAdapter;
-import com.ehealth.application.appointeeth.profile.listcliniques.CliniqueProfileListAdapter;
-import com.ehealth.application.appointeeth.profile.listcliniques.CliniqueProfileViewHolder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,8 +20,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AppointmentActivity extends AppCompatActivity {
+public class AppointmentSelectCliniqueActivity extends AppCompatActivity {
 
+    RecyclerView recyclerView;
+    AppointmentSelectCliniqueAdapter adapter;
     String doctorId, cliniqueId, cliniqueName, cliniqueLocation;
     ArrayList<CliniqueObject> cliniqueList;
     private Button selectBtn;
@@ -36,9 +33,11 @@ public class AppointmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment);
+        setContentView(R.layout.activity_appointment_select_clinique);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        selectBtn = (Button)findViewById(R.id.select_clinique);
+        selectBtn = (Button)findViewById(R.id.selectClinique);
         doctorId = getIntent().getExtras().get("doctorId").toString();
         System.out.println("appointment activity, doctorId=" + doctorId);
 
@@ -60,19 +59,16 @@ public class AppointmentActivity extends AppCompatActivity {
                         cliniqueLocation = clinique.getLocation();
                         cliniqueId = clinique.getId();
                         System.out.println("AppointmentActivity, cliniqueId = "+ clinique.getId());
-
-                        //trimis id ul clinicii in pagina de select timeslot
-                        selectBtn.setOnClickListener( v -> {
-                            Intent intent = new Intent(v.getContext(), AppointmentSelectTimeSlot.class);
-                            intent.putExtra("doctorId", doctorId);
-                            v.getContext().startActivity(intent);
-                        });
                     }
+
                 }
+                adapter = new AppointmentSelectCliniqueAdapter(cliniqueList, doctorId);
+                recyclerView.setAdapter(adapter);
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(AppointmentActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(AppointmentSelectCliniqueActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

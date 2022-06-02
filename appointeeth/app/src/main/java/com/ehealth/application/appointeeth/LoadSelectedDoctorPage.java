@@ -2,7 +2,6 @@ package com.ehealth.application.appointeeth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -10,13 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.ehealth.application.appointeeth.appointment.selectclinique.AppointmentSelectCliniqueActivity;
 import com.ehealth.application.appointeeth.data.models.CliniqueObject;
 import com.ehealth.application.appointeeth.data.models.ServiceObject;
 import com.ehealth.application.appointeeth.data.models.UserObject;
-import com.ehealth.application.appointeeth.profile.DoctorProfileActivity;
-import com.ehealth.application.appointeeth.profile.listcliniques.CliniqueProfileListAdapter;
 import com.ehealth.application.appointeeth.profile.listservices.ServiceProfileListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -86,7 +83,7 @@ public class LoadSelectedDoctorPage extends AppCompatActivity {
         appointmentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), AppointmentActivity.class);
+                Intent intent = new Intent(view.getContext(), AppointmentSelectCliniqueActivity.class);
                 intent.putExtra("doctorId", doctorId);
                 System.out.println("Load doctor profile page, doctorId = "+ doctorId);
                 view.getContext().startActivity(intent);
