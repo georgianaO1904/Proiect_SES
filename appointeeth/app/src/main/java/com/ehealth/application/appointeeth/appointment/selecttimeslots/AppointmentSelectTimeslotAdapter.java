@@ -36,7 +36,8 @@ public class AppointmentSelectTimeslotAdapter extends RecyclerView.Adapter<Appoi
         this.timeSlotList = timeSlotList;
         this.cliniqueId = cliniqueId;
         this.doctorId = doctorId;
-        this.patientId =patientId;
+        this.patientId = patientId;
+        this.serviceId = serviceId;
     }
     static class AppointmentSelectTimeslotListViewHolder extends AppointmentSelectTimeslotViewHolder {
         public Button selectTimeslot;

@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.ehealth.application.appointeeth.R;
 import com.ehealth.application.appointeeth.appointment.selectclinique.AppointmentSelectCliniqueActivity;
 import com.ehealth.application.appointeeth.appointment.selectclinique.AppointmentSelectCliniqueAdapter;
+import com.ehealth.application.appointeeth.data.models.AppointmentObject;
 import com.ehealth.application.appointeeth.data.models.CliniqueObject;
 import com.ehealth.application.appointeeth.data.models.TimeSlot;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,18 +27,18 @@ import java.util.ArrayList;
 public class AppointmentSelectTimeslotActivity extends AppCompatActivity {
 
     ArrayList<String> timeSlotList;
+    String userId;
     String cliniqueId, doctorId, timeslot_value, serviceId;
     RecyclerView recyclerView;
     AppointmentSelectTimeslotAdapter adapter;
     private Button selectBtn;
     DatabaseReference dbRef;
-    FirebaseAuth mFirebaseAuth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_select_timeslot);
+        userId =  FirebaseAuth.getInstance().getCurrentUser().getUid();
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         selectBtn = (Button) findViewById(R.id.selectTimeslot);
@@ -66,10 +67,30 @@ public class AppointmentSelectTimeslotActivity extends AppCompatActivity {
                         System.out.println("AppointmentActivity, timeslot value  = "+ timeslot_value);
                     }
                 }
-                String patientId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                adapter = new AppointmentSelectTimeslotAdapter(timeSlotList, cliniqueId, doctorId, patientId, serviceId);
-                recyclerView.setAdapter(adapter);
 
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(AppointmentSelectTimeslotActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        dbRef = FirebaseDatabase.getInstance().getReference().child("users").child(doctorId).child("appointments");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        AppointmentObject app = ds.getValue(AppointmentObject.class);
+                        String cid = app.getClinique();
+                        String ts = app.getTimeslot();
+                        if (cid.compareTo(cliniqueId) == 0 && timeSlotList.contains(ts)) {
+                            timeSlotList.remove(ts);
+                        }
+                    }
+                }
+                adapter = new AppointmentSelectTimeslotAdapter(timeSlotList, cliniqueId, doctorId, userId, serviceId);
+                recyclerView.setAdapter(adapter);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
