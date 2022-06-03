@@ -7,15 +7,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class DoctorViewAppointmentViewHolder extends RecyclerView.ViewHolder {
-    public TextView patientName, patientPhoneNr, service, clinique, timeslot;
+    public TextView clinique, timeslot, service;
 
     public DoctorViewAppointmentViewHolder(@NonNull View itemView)
     {
         super(itemView);
-        this.patientName = itemView.findViewById(R.id.patientName);
-        this.patientPhoneNr = itemView.findViewById(R.id.patientPhoneNr);
-        this.service = itemView.findViewById(R.id.appService);
-        this.clinique = itemView.findViewById(R.id.appClinique);
+        this.service = itemView.findViewById(R.id.service);
+        this.clinique = itemView.findViewById(R.id.clinique);
         this.timeslot = itemView.findViewById(R.id.timeslot);
     }
 }

@@ -64,7 +64,12 @@ public class AppointmentSelectTimeslotAdapter extends RecyclerView.Adapter<Appoi
             AppointmentObject newAppointment = new AppointmentObject(cliniqueId, selectedTimeslot, serviceId);
             dbRef.child("users").child(patientId).child("appointments").child(doctorId).setValue(newAppointment);
             dbRef.child("users").child(doctorId).child("appointments").child(patientId).setValue(newAppointment);
-            Intent intent = new Intent(view.getContext(), AppointmentDoneActivity.class);
+            Intent intent = new Intent(view.getContext(), com.ehealth.application.appointeeth.AppointmentDoneActivity.class);
+            //intent.putExtra("patientId", patientId);
+          //  System.out.println("AppointmentSelectTimeslotAdapter, patientId " + patientId);
+            //intent.putExtra("patientId", patientId);
+
+            view.getContext().startActivity(intent);
         });
     }
 

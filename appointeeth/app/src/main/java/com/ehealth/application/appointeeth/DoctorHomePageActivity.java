@@ -6,13 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.ehealth.application.appointeeth.appointment.view_appointment.DoctorViewAppointmentActivity;
+import com.ehealth.application.appointeeth.appointment.view_appointment.DoctorViewAppointmentAdapter;
 import com.ehealth.application.appointeeth.login.LoginActivity;
 import com.ehealth.application.appointeeth.profile.DoctorProfileActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class DoctorHomePageActivity extends AppCompatActivity {
 
-    private Button logoutButton, profileButton;
+    private Button logoutButton, profileButton, appointmentButton;
     FirebaseAuth mFirebaseAuth;
 
     @Override
@@ -22,6 +24,7 @@ public class DoctorHomePageActivity extends AppCompatActivity {
 
         logoutButton = findViewById(R.id.LogoutButton);
         profileButton = findViewById(R.id.ProfileButton);
+        appointmentButton = findViewById(R.id.AppointmentButton);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
 
@@ -33,5 +36,9 @@ public class DoctorHomePageActivity extends AppCompatActivity {
         profileButton.setOnClickListener(v -> {
             startActivity(new Intent(DoctorHomePageActivity.this, DoctorProfileActivity.class));
         });
+
+//        appointmentButton.setOnClickListener(v ->{
+//            startActivity(new Intent(DoctorHomePageActivity.this, DoctorViewAppointmentActivity.class));
+//        });
     }
 }
