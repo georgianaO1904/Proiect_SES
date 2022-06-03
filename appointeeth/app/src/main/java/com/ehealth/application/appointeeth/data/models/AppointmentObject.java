@@ -1,7 +1,7 @@
 package com.ehealth.application.appointeeth.data.models;
 
 public class AppointmentObject {
-    private String clinique, timeslot, service;
+    private String clinique, timeslot, service, patientId, patientName;
 
     public String getClinique() {
         return clinique;
@@ -22,6 +22,22 @@ public class AppointmentObject {
     }
 
     public AppointmentObject() { }
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
+    }
 
     public void setTimeslot(String timeslot) {
         this.timeslot = timeslot;

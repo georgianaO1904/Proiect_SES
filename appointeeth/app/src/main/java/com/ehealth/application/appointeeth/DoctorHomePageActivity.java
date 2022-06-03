@@ -37,8 +37,8 @@ public class DoctorHomePageActivity extends AppCompatActivity {
             startActivity(new Intent(DoctorHomePageActivity.this, DoctorProfileActivity.class));
         });
 
-//        appointmentButton.setOnClickListener(v ->{
-//            startActivity(new Intent(DoctorHomePageActivity.this, DoctorViewAppointmentActivity.class));
-//        });
+        appointmentButton.setOnClickListener(v ->{
+            startActivity(new Intent(DoctorHomePageActivity.this, DoctorViewAppointmentActivity.class));
+        });
     }
 }

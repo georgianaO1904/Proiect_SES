@@ -10,12 +10,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ehealth.application.appointeeth.R;
 import com.ehealth.application.appointeeth.appointment.selectclinique.AppointmentSelectCliniqueAdapter;
+import com.ehealth.application.appointeeth.data.models.AppointmentObject;
 
 import java.util.ArrayList;
 
 public class DoctorViewAppointmentAdapter extends RecyclerView.Adapter<DoctorViewAppointmentAdapter.DoctorViewAppointmentListHolder>{
 
     ArrayList<com.ehealth.application.appointeeth.data.models.AppointmentObject> appointmentsList;
+
+    public DoctorViewAppointmentAdapter(ArrayList<AppointmentObject> appointmentsList) {
+        this.appointmentsList = appointmentsList;
+    }
 
     public DoctorViewAppointmentAdapter.DoctorViewAppointmentListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {

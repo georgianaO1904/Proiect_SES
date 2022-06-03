@@ -40,7 +40,6 @@ public class DoctorViewAppointmentActivity extends AppCompatActivity{
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         doctorId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-       //patientId = getIntent().getExtras().get("patientId").toString();
 
         System.out.println("DoctorViewAppointmentActivity, patientId"+patientId);
 
@@ -53,24 +52,22 @@ public class DoctorViewAppointmentActivity extends AppCompatActivity{
                 if (snapshot.exists()) {
                     appointmentsList = new ArrayList<>();
                     for (DataSnapshot ds : snapshot.getChildren()) {
-                        appointmentsList.add(ds.getValue(AppointmentObject.class));
-                        System.out.println("appointmentsList="+appointmentsList);
-                    }
-                    for(AppointmentObject appointment: appointmentsList){
-                        clinique = appointment.getClinique();
-                        timeslot = appointment.getTimeslot();
-                        service = appointment.getService();
+                        String patientId = ds.getKey();
+                        AppointmentObject app = ds.getValue(AppointmentObject.class);
+                        app.setPatientId(patientId);
+                        appointmentsList.add(app);
                     }
                 }
-//                //create adapter
-                //recyclerView.setAdapter(adapter);
 
+                adapter = new DoctorViewAppointmentAdapter(appointmentsList);
+                recyclerView.setAdapter(adapter);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(DoctorViewAppointmentActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
 
     }
 }

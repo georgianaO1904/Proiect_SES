@@ -41,6 +41,7 @@
         <activity android:name=".PacientHomePageActivity" />
         <activity android:name=".register.RegisterPatientActivity" />
         <activity android:name=".register.RegisterDoctorActivity" />
+        <activity android:name=".appointment.view_appointment.DoctorViewAppointmentActivity" />
         <activity android:name=".DoctorHomePageActivity" />
         <activity android:name=".login.SplashScreenActivity">
             <intent-filter>

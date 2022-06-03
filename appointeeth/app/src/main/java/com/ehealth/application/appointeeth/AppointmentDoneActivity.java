@@ -18,7 +18,7 @@ public class AppointmentDoneActivity extends AppCompatActivity {
         homePageBtn = (Button) findViewById(R.id.home_button);
 
         homePageBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), DoctorHomePageActivity.class);
+            Intent intent = new Intent(v.getContext(), PacientHomePageActivity.class);
             v.getContext().startActivity(intent);
         });
 
