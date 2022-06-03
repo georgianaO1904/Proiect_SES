@@ -16,11 +16,13 @@ import java.util.ArrayList;
 public class AppointmentSelectCliniqueAdapter extends RecyclerView.Adapter<AppointmentSelectCliniqueAdapter.AppointmentSelectCliniqueListViewHolder> {
 
     ArrayList<CliniqueObject> cliniqueList;
-    String doctorId;
+    String doctorId, serviceId;
 
-    public AppointmentSelectCliniqueAdapter(ArrayList<CliniqueObject> cliniqueList, String doctorId) {
+    public AppointmentSelectCliniqueAdapter(ArrayList<CliniqueObject> cliniqueList, String doctorId,
+                                            String serviceId) {
         this.cliniqueList = cliniqueList;
         this.doctorId = doctorId;
+        this.serviceId = serviceId;
     }
 
     public AppointmentSelectCliniqueAdapter.AppointmentSelectCliniqueListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
@@ -41,6 +43,8 @@ public class AppointmentSelectCliniqueAdapter extends RecyclerView.Adapter<Appoi
             Intent intent = new Intent(view.getContext(), com.ehealth.application.appointeeth.appointment.selecttimeslots.AppointmentSelectTimeslotActivity.class);
             intent.putExtra("cliniqueId", cliniqueId);
             intent.putExtra("doctorId", doctorId);
+            intent.putExtra("serviceId", serviceId);
+
             view.getContext().startActivity(intent);
         });
     }

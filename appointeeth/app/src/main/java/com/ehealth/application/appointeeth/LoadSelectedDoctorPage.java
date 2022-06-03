@@ -36,7 +36,7 @@ public class LoadSelectedDoctorPage extends AppCompatActivity {
     ArrayList<ServiceObject> serviceList;
     ServiceProfileListAdapter servicesAdapter;
     DatabaseReference dbRefCliniques, dbRefServices;
-    String userId, doctorId;
+    String userId, doctorId, serviceId;
     private Button servicesBtn, cliniquesBtn, appointmentBtn;
     //CliniqueProfileListAdapter cliniquesAdapter;
     ArrayList<CliniqueObject> cliniqueList;
@@ -54,6 +54,8 @@ public class LoadSelectedDoctorPage extends AppCompatActivity {
         appointmentBtn = (Button) findViewById(R.id.appointment_button);
 
         doctorId = getIntent().getExtras().get("doctorId").toString();
+        serviceId = getIntent().getExtras().get("serviceId").toString();
+
         userId = doctorId;
 
         doctorName = (TextView) findViewById(R.id.doctor_fullname);
@@ -85,6 +87,7 @@ public class LoadSelectedDoctorPage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), AppointmentSelectCliniqueActivity.class);
                 intent.putExtra("doctorId", doctorId);
+                intent.putExtra("serviceId", serviceId);
                 System.out.println("Load doctor profile page, doctorId = "+ doctorId);
                 view.getContext().startActivity(intent);
             }

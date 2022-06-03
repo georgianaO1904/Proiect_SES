@@ -24,7 +24,7 @@ public class AppointmentSelectCliniqueActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     AppointmentSelectCliniqueAdapter adapter;
-    String doctorId, cliniqueId, cliniqueName, cliniqueLocation;
+    String doctorId, cliniqueId, cliniqueName, cliniqueLocation, serviceId;
     ArrayList<CliniqueObject> cliniqueList;
     private Button selectBtn;
     DatabaseReference dbRef;
@@ -39,6 +39,8 @@ public class AppointmentSelectCliniqueActivity extends AppCompatActivity {
 
         selectBtn = (Button)findViewById(R.id.selectClinique);
         doctorId = getIntent().getExtras().get("doctorId").toString();
+        serviceId = getIntent().getExtras().get("serviceId").toString();
+
         System.out.println("appointment activity, doctorId=" + doctorId);
 
 
@@ -62,7 +64,7 @@ public class AppointmentSelectCliniqueActivity extends AppCompatActivity {
                     }
 
                 }
-                adapter = new AppointmentSelectCliniqueAdapter(cliniqueList, doctorId);
+                adapter = new AppointmentSelectCliniqueAdapter(cliniqueList, doctorId, serviceId);
                 recyclerView.setAdapter(adapter);
 
             }

@@ -56,6 +56,8 @@ public class SearchDoctorsListAdapter extends RecyclerView.Adapter<com.ehealth.a
            // cv de genul pt partea cu deschisul paginii cuinfoptdoctor
             Intent intent = new Intent(v.getContext(), LoadSelectedDoctorPage.class);
             intent.putExtra("doctorId", doctorId);
+            intent.putExtra("serviceId", serviceId);
+            v.getContext().startActivity(intent);
             v.getContext().startActivity(intent);
         });
     }
