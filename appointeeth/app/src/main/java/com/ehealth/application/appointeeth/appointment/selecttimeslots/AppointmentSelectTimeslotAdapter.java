@@ -1,9 +1,12 @@
 package com.ehealth.application.appointeeth.appointment.selecttimeslots;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.ehealth.application.appointeeth.AppointmentDoneActivity;
 import com.ehealth.application.appointeeth.R;
 import com.ehealth.application.appointeeth.appointment.selectclinique.AppointmentSelectCliniqueAdapter;
 import com.ehealth.application.appointeeth.appointment.selectclinique.AppointmentSelectCliniqueViewHolder;
@@ -25,11 +28,11 @@ public class AppointmentSelectTimeslotAdapter extends RecyclerView.Adapter<Appoi
         this.cliniqueId = cliniqueId;
     }
     static class AppointmentSelectTimeslotListViewHolder extends AppointmentSelectTimeslotViewHolder {
-        public Button selectClinique;
+        public Button selectTimeslot;
 
         public AppointmentSelectTimeslotListViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.selectClinique = itemView.findViewById(R.id.selectClinique);
+            this.selectTimeslot = itemView.findViewById(R.id.selectTimeslot);
         }
     }
 
@@ -43,13 +46,9 @@ public class AppointmentSelectTimeslotAdapter extends RecyclerView.Adapter<Appoi
     public void onBindViewHolder(@NonNull AppointmentSelectTimeslotAdapter.AppointmentSelectTimeslotListViewHolder holder, int position)
     {
         holder.timeslot.setText(timeSlotList.get(position));
-
-//        holder.selectClinique.setOnClickListener(view -> {
-//            String cliniqueId = cliniqueList.get(position).getId();
-//            Intent intent = new Intent(view.getContext(), AppointmentActivity.class);
-//            intent.putExtra("cliniqueId", cliniqueId);
-//            view.getContext().startActivity(intent);
-//        });
+        holder.selectTimeslot.setOnClickListener(view ->{
+            Intent intent = new Intent(view.getContext(), AppointmentDoneActivity.class);
+        });
     }
 
     public int getItemCount(){
